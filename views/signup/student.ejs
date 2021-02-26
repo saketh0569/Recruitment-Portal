@@ -1,0 +1,47 @@
+<% include ../partials/header %>
+
+<div class="register">
+ 
+	<h1 class=" d-flex justify-content-center" style="color: white;">
+		Register for student
+	</h1>
+	<div class=row>
+		<form action="/register/student" class="mx-auto" method="POST">
+			<div class="form-group">
+				<input class="form-control " type="text" name="sName" placeholder="Name" type="text" required>
+			</div>
+			<div class="form-group">
+				<input class="form-control " type="text" name="sUsn" placeholder="USN" required>
+			</div>
+
+			<div class="form-group">
+				<input class="form-control " type="text" name="sDepartment" placeholder="Department"  type="text" required>
+			</div>
+			
+			
+			<div class="form-group">
+				<input class="form-control " type="text" name="sAddress" placeholder="Address" required>
+			</div>
+			<div class="form-group">
+				<input class="form-control " type="text" name="sContactNo" placeholder="Contact No"  pattern="[0-9]{10}" required>
+			</div>
+			<div class="form-group">
+				<input class="form-control " type="text" name="sCGPA" placeholder="CGPA" step="0.1" max="10" min="0" required>
+			</div>
+			<div class="form-group">
+				<input class="form-control " type="text" name="resume" placeholder="Resume link" required>
+			</div>
+
+			<div class="form-group">
+				<input class="form-control " type="text" name="email" placeholder="Email address" pattern=".+.com" required>
+			</div>
+			
+			<div class="form-group">
+				<input class="btn  form-control btn-primary" type="submit">
+			</div>
+			<a href="/movies">Go Back </a>
+		</form>
+	</div>
+	
+</div>
+<% include ../partials/footer %>

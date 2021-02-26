@@ -1,0 +1,39 @@
+<% include ../partials/header %>
+
+<div>
+	<h1 class=" d-flex justify-content-center" style="color: white;">
+		Update Offer details
+	</h1>
+	<div class=row>
+		<form action="/movies/update/offer/<%=data.offerID%>" class="mx-auto" method="POST">
+			<div class="form-group">
+				<input class="form-control " type="text" name="role" placeholder="Role" value="<%=data.role%>" required>
+			</div>
+			<div class="form-group">
+				<input class="form-control " type="text" name="offerDisc" placeholder="offer discription" value="<%=data.offerDisc%>" required>
+			</div>
+			<div class="form-group">
+				<input class="form-control " type="text" name="coCgpa" placeholder="cut of cgpa" value="<%=data.coCgpa%>" required>
+			</div>
+			<!-- <div class="form-group">
+				<input class="form-control " type="text" name="lastDate" placeholder="last date (yyyy-mm-dd) format" value="<%=data.lastDate%>" required>
+			</div> -->
+
+			<div class="form-group">
+				<input class="form-control" name="lastDate" id="dateControl" type="date" value="<%=data.lastDate%>" required>
+			</div>
+
+			<div class="form-group">
+				<input class="form-control " type="text" name="logo" placeholder="Job logo OR Company Logo link" value="<%=data.logo%>" required>
+			</div>
+			<div class="form-group">
+				<input class="btn  form-control btn-primary" type="submit">
+			</div>
+			<a href="/movies">Go Back </a>
+		</form>
+	</div>
+</div>
+
+
+
+<% include ../partials/footer %>

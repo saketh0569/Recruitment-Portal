@@ -1,0 +1,38 @@
+<% include ../partials/header %>
+	<div class="container">
+		<header class="jumbotron mt-5" style="border-radius: 10px;">
+
+			<div style="padding-left: 100px;">
+				<h1 class="display-4">All JOBS</h1>
+				<p class="lead">All jobs for the ongoing placment/internship Drive are given below </p>
+				<% if(currentUser && currentUser.role=='recruiter' ){ %>
+					<a class="btn btn-primary btn-lg" href="/movies/new" role="button">Add new Job</a>
+					<%}%>
+			</div>
+		</header>
+
+
+		<div class="row" style="display:flex; flex-wrap: wrap; ">
+			<% list.forEach((offer)=>{ %>
+				<% if(!currentUser || currentUser.role=='student' || currentUser.username==offer.cId) { %>
+					<div class="col-sm-4  " id="job">
+
+						<div class="card mx-auto" id="cardui">
+							<img src="<%= offer.logo %>" class="card-img-top" alt="NO LOGO">
+							<div class="card-body">
+								<h5 class="card-title">
+									<%= offer.role %>
+								</h5>
+								<p class="card-text">
+									<%= offer.offerDisc %>
+								</p>
+							</div>
+
+							<a href="movies/<%=offer.offerID%>" class="btn btn-primary">More Info</a>
+						</div>
+					</div>
+					<%}%>
+						<%})%>
+		</div>
+	</div>
+	<% include ../partials/footer %>

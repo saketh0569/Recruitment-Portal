@@ -1,0 +1,42 @@
+<% include ../partials/header %>
+
+<div class="register">
+
+	<h1 class=" d-flex justify-content-center" style="color: white; padding: 9px;">
+		Details of <%=data.sname%>
+	</h1>
+	<div class=row>
+		<form action="/MyAcc" class="mx-auto" method="POST">
+			<fieldset disabled="disabled">
+				<div class="form-group">
+					<input class="form-control " type="text" name="sName" placeholder="Name" value="Name &rarr; <%=data.sname%>" required>
+				</div>
+				<div class="form-group">
+					<input class="form-control " type="text" name="sUsn" placeholder="USN" value="USN &rarr; <%=data.usn%>"required>
+				</div>
+				<div class="form-group">
+					<input class="form-control " type="text" name="sDepartment" placeholder="Department" value="Branch &rarr; <%=data.department%>"required>
+				</div>
+				
+				<div class="form-group">
+					<input class="form-control " type="text" name="sAddress" placeholder="Address" value="Address &rarr; <%=data.address%>"required>
+				</div>
+				<div class="form-group">
+					<input class="form-control " type="text" name="sContactNo" placeholder="Contact No" value="contach No &rarr; <%=data.contactNo%>"required>
+				</div>
+				<div class="form-group">
+					<input class="form-control " type="text" name="sCGPA" placeholder="CGPA" value="CGPA &rarr; <%=data.cgpa%>" required>
+				</div>
+				<div class="form-group">
+					<input class="form-control " type="text" name="resume" placeholder="Resume link" value="Resume &rarr; <%=data.resume%>" required>
+				</div>
+				<div class="form-group">
+					<input class="form-control " type="text" name="email" placeholder="Email address" value="Email &rarr; <%=data.email%>" required>
+				</div>
+			</fieldset>
+			<a href="/movies">Go Back </a>
+		</form>
+	</div>
+	
+</div>
+<% include ../partials/footer %>

@@ -1,0 +1,33 @@
+<% include ../partials/header %>
+
+<div class="register">
+
+	<h1 class=" d-flex justify-content-center" style="color: white;">
+		Register for company
+	</h1>
+	<div class=row>
+		<form action="/register/company" class="mx-auto" method="POST">
+			<div class="form-group">
+				<input class="form-control " type="text" name="cName" placeholder="Company Name" required>
+			</div>
+			<div class="form-group">
+				<input class="form-control " type="text" name="cInfo" placeholder="Comapny Information" required>
+			</div>
+			<div class="form-group">
+				<input class="form-control " type="text" name="address" placeholder="Address" required>
+			</div>
+			
+			<div class="form-group">
+				<input class="form-control " type="text" name="contactNo" placeholder="Contact number" pattern="[0-9]{10}" required>
+			</div>
+			
+			<div class="form-group">
+				<input class="btn  form-control btn-primary" type="submit">
+			</div>
+			<a href="/movies">Go Back </a>
+		</form>
+	</div>
+	
+	
+</div>
+<% include ../partials/footer %>

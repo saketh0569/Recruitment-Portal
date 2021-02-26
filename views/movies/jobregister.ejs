@@ -1,0 +1,39 @@
+<% include ../partials/header %>
+
+<div class="register">
+
+	<h1 class=" d-flex justify-content-center" style="color: white;">
+		Register for Job
+	</h1>
+	<div class=row>
+		<form action="/movies/register" class="mx-auto" method="POST">
+			<div class="form-group">
+				<input class="form-control " type="text" name="mName" placeholder="Name of the Job offered" required>
+			</div>
+			<div class="form-group">
+				<input class="form-control " type="text" name="mUrl" placeholder="Url of the Company Logo" required>
+			</div>
+			<div class="form-group">
+				<input class="form-control " type="text" name="mDescription" placeholder="Description of the Job offered" required>
+			</div>
+			
+			<div class="form-group">
+				<input class="form-control " type="text" name="mName" placeholder="Name of the Company" required>
+			</div>
+			<div class="form-group">
+				<input class="form-control " type="text" name="mUrl" placeholder="Url of the Company Logo" required>
+			</div>
+			<div class="form-group">
+				<input class="form-control " type="text" name="mDescription" placeholder="Description of the Job offered" required>
+			</div>
+			<div class="form-group">
+				<input class="btn  form-control btn-primary" type="submit">
+			</div>
+			<a href="/movies">Go Back </a>
+		</form>
+
+	</div>
+	
+	
+</div>
+<% include ../partials/footer %>

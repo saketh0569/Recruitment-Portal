@@ -1,0 +1,38 @@
+<% include ../partials/header %>
+
+<div class="register">
+	
+	<h1 class=" d-flex justify-content-center" style="color: white;">
+		Adding New JOB
+	</h1>
+	<div class=row>
+		<form action="/movies" class="mx-auto" method="POST">
+			<div class="form-group">
+				<input class="form-control " type="text" name="role" placeholder="Role" required>
+			</div>
+			<div class="form-group">
+				<input class="form-control " type="text" name="offerDisc" placeholder="offer discription" required>
+			</div>
+			<div class="form-group">
+				<input class="form-control " type="text" name="coCgpa" placeholder="cut of cgpa" required>
+			</div>
+			
+			<!-- <div class="form-group">
+				<input class="form-control " type="text" name="lastDate" placeholder="last date (yyyy-mm-dd) format" required>
+			</div> -->
+
+			<div class="form-group">
+				<input class="form-control" name="lastDate" id="dateControl" type="date" placeholder="Date" required>
+			</div>
+
+			<div class="form-group">
+				<input class="form-control " type="text" name="logo" placeholder="Job logo OR Company Logo link" required>
+			</div>
+			<div class="form-group">
+				<input class="btn  form-control btn-primary" type="submit">
+			</div>
+			<a href="/movies">Go Back </a>
+		</form>
+	</div>
+</div>
+<% include ../partials/footer %>

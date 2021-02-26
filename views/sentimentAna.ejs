@@ -1,0 +1,78 @@
+<% include partials/header %>
+
+
+<table class="table" id='Cresult' style="color: white;">
+	<thead>
+	  <tr>
+		<th scope="col">#</th>
+		<th scope="col">offer Details</th>
+		<th scope="col">Feedback</th>
+		<th scope="col">rating</th>
+		<th scope="col">suggestion</th>
+		<th scope="col"> Analysis</th>
+	  </tr>
+	</thead>
+	<tbody>
+		<% x=1;%>
+		<% pos.forEach((details)=>{ %>
+			<tr>
+                <th scope="row"><%= x++ %></th>
+                <td><a class= "selection" href="/movies/<%=details.det.offerID%>" ><li class="list-group-item active tb"> More Info </li></a></td>
+				<td> <%= details.det.feedback %></td>
+				<td><%= details.det.rating %></td>
+				<td><%= details.det.suggestion %></td>
+				<td><table id="ana">
+					<tr>
+					  <td>score: <%= details.res.score %></td>
+					  <!-- <td>comparative:<%= details.res.comparative %></td> -->
+					  <td>positive: <%= details.res.positive %></td>
+					</tr>
+					<!-- <tr>
+					  <td>positive: <%= details.res.positive %></td>
+					  <td>score: <%= details.res.score %></td>
+					</tr> -->
+				  </table>
+				</td>
+			</tr>
+		<%})%>
+	</tbody>
+  </table>
+
+
+<table class="table" id='Cresult' style="color: white;">
+	<thead>
+	  <tr>
+		<th scope="col">#</th>
+		<th scope="col">offer Details</th>
+		<th scope="col">Feedback</th>
+		<th scope="col">rating</th>
+		<th scope="col">suggestion</th>
+		<th scope="col"> Analysis</th>
+	  </tr>
+	</thead>
+	<tbody>
+		<% x=1;%>
+		<% neg.forEach((details)=>{ %>
+			<tr>
+                <th scope="row"><%= x++ %></th>
+                <td><a class= "selection" href="/movies/<%=details.det.offerID%>" ><li class="list-group-item active tb"> More Info </li></a></td>
+				<td> <%= details.det.feedback %></td>
+				<td><%= details.det.rating %></td>
+				<td><%= details.det.suggestions %></td>
+				<td><table id="ana">
+					<tr>
+					  <td>score: <%= details.res.score %></td>
+					  <!-- <td>comparative:<%= details.res.comparative %></td> -->
+					  <td>positive: <%= details.res.negative %></td>
+					</tr>
+					<!-- <tr>
+					  <td>score: <%= details.res.score %></td>
+					</tr> -->
+				  </table>
+				</td>
+			</tr>
+		<%})%>
+	</tbody>
+  </table>
+
+<% include partials/footer %>

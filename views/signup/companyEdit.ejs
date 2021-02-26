@@ -1,0 +1,33 @@
+<% include ../partials/header %>
+
+	<div class="register">
+		<h1 class=" d-flex justify-content-center updateDet">
+			Update the Company Details
+		</h1>
+		<div class=row id="Accdet">
+			<form action="/MyAcc" class="mx-auto" method="POST">
+				<div class="form-group">
+					<input class="form-control" type="text" name="cName" value="<%=data.cName%>" required>
+				</div>
+				<div class="form-group">
+					<input class="form-control " type="text" name="cInfo" value="<%=data.cInfo%>" required>
+				</div>
+				<div class="form-group">
+					<input class="form-control " type="text" name="address" value="<%=data.address%>" required>
+				</div>
+
+				<div class="form-group">
+					<input class="form-control " type="text" name="contactNo" value="<%=data.contactNo%>"
+						pattern="[0-9]{10}" required>
+				</div>
+
+				<div class="form-group">
+					<input class="btn  form-control btn-primary" type="submit" value="Update">
+				</div>
+				<a href="/movies">Go Back </a>ß
+			</form>
+
+		</div>
+	</div>
+
+	<% include ../partials/footer %>

@@ -1,0 +1,50 @@
+<% include ../partials/header %>
+
+	<div class="register">
+		<h1 class="d-flex justify-content-center updateDet" style="color: white;">Update Your Details</h1>
+		<div class="row" id="Accdet">
+			<form action="/MyAcc" class="mx-auto" method="POST">
+				<div class="form-group">
+					<input class="form-control" type="text" name="sName" placeholder="Name" value="<%=data.sname%>"
+						required />
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="text" name="sUsn" placeholder="USN" value="<%=data.usn%>"
+						required />
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="text" name="sDepartment" placeholder="Department"
+						pattern="[a-z].{1,}" value="<%=data.department%>" required />
+				</div>
+
+				<div class="form-group">
+					<input class="form-control" type="text" name="sAddress" placeholder="Address"
+						value="<%=data.address%>" required />
+				</div>
+				<div class="form-group">
+					<input class="form-control" name="sContactNo" placeholder="Contact No" pattern="[0-9]{10}"
+						value="<%=data.contactNo%>" required />
+				</div>
+				<div class="form-group">
+					<input class="form-control" name="sCGPA" placeholder="CGPA" type="number" step="0.1" max="10"
+						min="0" value="<%=data.cgpa%>" required />
+				</div>
+
+				<div class="form-group">
+					<input class="form-control" type="text" name="resume" placeholder="Resume link"
+						value="<%=data.resume%>" required />
+				</div>
+
+				<div class="form-group">
+					<input class="form-control" type="text" name="email" placeholder="Email address" pattern=".+.com" value="<%=data.email%>" required />
+				</div>
+
+				<div class="form-group" style="color: white;">
+					<input class="btn form-control btn-primary" type="submit" value="Update" />
+				</div>
+				<a href="/movies">Go Back </a>
+			</form>
+		</div>
+	</div>
+
+<% include ../partials/footer %>

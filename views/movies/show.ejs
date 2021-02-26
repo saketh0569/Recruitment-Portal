@@ -1,0 +1,100 @@
+<% include ../partials/header %>
+	<!-- <%=currentUser%> -->
+	<div class="container">
+		<div class="row mt-5">
+			<div class="col-md-3">
+				<p class="lead" style="color: white; font-size: 30px ;padding-bottom: 8%;">OPTIONS</p>
+				<ul id="leftButton" class="list-group">
+
+					<% if(!currentUser || currentUser.role=='student' ) {%>
+						<a class="selection" href="/movies/<%=movie.offerId%>">
+							<li class="list-group-item active">Rectuitment details</li>
+						</a>
+
+						<!-- removing register following date -->
+						<% if(regbool) {%>
+							<a class="selection" href="/movies/register/<%=movie.offerID%>">
+								<li class="list-group-item active">Register </li>
+							</a>
+							<%} else {%>
+								<a class="selection">
+									<li class="list-group-item active btn-secondary">Last Date Over </li>
+								</a>
+							<%} %>
+
+							
+								<!-- // feedback -->
+								<!-- feedback can be given even he is not registered -->
+							<% if(b && !regbool) {%>
+								<a class="selection" href="/movies/feedback/<%=movie.offerID%>">
+									<li class="list-group-item active"> Give Feedback </li>
+								</a>
+								<%} else {%>
+									<a class="selection" href="">
+										<li class="list-group-item active btn-secondary"> Can't give Feedback </li>
+									</a>
+								<%} %>	
+
+
+								
+						<%} else {%>
+
+							<a class="selection" href="/movies/<%=movie.offerId%>">
+								<li class="list-group-item active">Rectuitment details</li>
+							</a>
+							<a class="selection" href="/movies/company/result/<%=movie.offerID%>">
+								<li class="list-group-item active">Update Result </li>
+							</a>
+							<a class="selection" href="/movies/company/delete/<%=movie.offerID%>">
+								<li class="list-group-item active"> Remove This offer </li>
+							</a>
+							<a class="selection" href="/movies/update/offer/<%=movie.offerID%>">
+								<li class="list-group-item active"> Edit Offer </li>
+							</a>
+							<a class="selection" href="/movies/result/offer/<%=movie.offerID%>">
+								<li class="list-group-item active"> show Stats </li>
+							</a>
+							<%}%>
+				</ul>
+			</div>
+			<div class="col-md-9">
+				<div class="card" id="offerCard">
+
+					<div class="card-body">
+						<h3 class="card-title">
+							<%=comp.cName%>
+						</h3>
+						<p class="card-text">Company Info &rarr; <%=comp.cInfo%>
+						</p>
+						<p class="card-text">Profile/Role &rarr; <%=movie.role%>
+						</p>
+						<p class="card-text">Job Description &rarr; <%=movie.offerDisc%>
+						</p>
+						<p class="card-text">Criteria &rarr; <%=movie.coCgpa%> CGPA</p>
+						<p class="card-text">Last Date &rarr; <%=movie.lastDate%>
+						</p>
+					</div>
+
+				</div>
+
+				<div class="card-footer text-muted" id="commentCard">
+					<a href="/comments/new/<%=movie.offerID%>" class="btn btn-outline-secondary text-right">Ask a
+						Question</a>
+					<hr>
+
+					<%comments.forEach((comment)=>{%>
+						<div id="Comment">
+							<strong>Question by <%=comment.username%>:</strong>&nbsp;<%=comment.que%><br>
+								<strong>Response from Comp:</strong>&nbsp;<%=comment.ans%><br>
+									<%if(currentUser && currentUser.role=="recruiter" ){%>
+										<a class="btn btn-success" href="/comments/edit/<%=comment._id%>"
+											role="button">Respond</a>
+										<%}%>
+
+						</div>
+						<%})%>
+				</div>
+			</div>
+		</div>
+	</div>
+	<% include ../partials/footer %>

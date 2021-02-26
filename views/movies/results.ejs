@@ -1,0 +1,29 @@
+<% include ../partials/header %>
+
+<div class="register">
+
+	<h1 class=" d-flex justify-content-center" style="color: white;">
+		Round Results
+	</h1>
+	<div class=row>
+		<form action="/movies/company/result/<%=offerID%>" class="mx-auto" method="POST">
+			<div class="form-group">
+				<input class="form-control " type="text" name="usn" placeholder="USN" required>
+			</div>
+			<div class="form-group">
+				<input class="form-control " type="text" name="roundNo" placeholder="Round" required>
+			</div>
+			
+			<div class="form-group">
+				<input class="form-control " type="text" name="status" placeholder="status" required>
+			</div>
+			
+			<div class="form-group">
+				<input class="btn  form-control btn-primary" type="submit" value="Update">
+			</div>
+			<a href="/movies">Go Back </a>
+		</form>
+	</div>
+	
+</div>
+<% include ../partials/footer %>
