@@ -6,7 +6,8 @@
 				<h1 class="display-4">All JOBS</h1>
 				<p class="lead">All jobs for the ongoing placment/internship Drive are given below </p>
 				<% if(currentUser && currentUser.role=='recruiter' ){ %>
-					<a class="btn btn-primary btn-lg" href="/movies/new" role="button">Add new Job</a>
+					<a class="btn btn-primary btn-lg" href="/movies/new" role="button">Add new
+						Job</a>
 					<%}%>
 			</div>
 		</header>
@@ -14,7 +15,8 @@
 
 		<div class="row" style="display:flex; flex-wrap: wrap; ">
 			<% list.forEach((offer)=>{ %>
-				<% if(!currentUser || currentUser.role=='student' || currentUser.username==offer.cId) { %>
+				<% if(!currentUser || currentUser.role=='student' || currentUser.username==offer.cId) {
+					%>
 					<div class="col-sm-4  " id="job">
 
 						<div class="card mx-auto" id="cardui">
@@ -28,7 +30,8 @@
 								</p>
 							</div>
 
-							<a href="movies/<%=offer.offerID%>" class="btn btn-primary">More Info</a>
+							<a href="movies/<%=offer.offerID%>" class="btn btn-primary">More
+								Info</a>
 						</div>
 					</div>
 					<%}%>
